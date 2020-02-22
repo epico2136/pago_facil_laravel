@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//Primera rut: mensaje
+Route::get('hola',function(){
+    echo "Hola madrugadores";
+
+
+});
