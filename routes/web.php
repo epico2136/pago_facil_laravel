@@ -18,10 +18,10 @@ Route::get('/', function () {
 Route::get('hola',function(){
     $ficha = 1753443;
     echo 'Hola madrugadores',' ',  $ficha;
-    
+
 });
 
-//Ruta tratr arreglos
+//Ruta tratar arreglos
 Route::get('arreglo' , function(){
 
     //crear arreglo
@@ -56,12 +56,73 @@ Route::get('arreglo' , function(){
     echo "<br/>";
 
 
-    //Imprimir un arreglo grande 
+    //Imprimir un arreglo grande
     foreach($estudiantes as $clave => $estudiante){
     echo $clave,"=",$estudiante;
     echo "<hr/>";
 
     }
+
+
+});
+
+//Arreglos Multidimensionales
+Route::get('arreglosm',function(){
+
+    $paises =["Colombia"=>["capital"=>"Bogota",
+                          "Moneda"=>"peso",
+                          "poblacion"=>50],
+              "Peru"=>["capital"=>"Lima",
+                       "Moneda"=>"sol",
+                       "poblacion"=>32],
+              "Bolivia"=>["capital"=>"La paz",
+                          "Moneda"=>"peso Boliviano",
+                          "poblacion"=>11],
+              "Argentina"=>["capital"=>"Buenos Aires",
+                            "Moneda"=>"",
+                            "poblacion"=>""],
+              "Venezuela"=>["capital"=>"Caracas",
+                            "Moneda"=>"",
+                            "poblacion"=>""],
+              "Brazil"=>["capital"=>"Sao Paulo",
+                        "Moneda"=>"",
+                        "poblacion"=>""],
+              "Paraguay"=>["capital"=>"Asuncion",
+                           "Moneda"=>"",
+                           "poblacion"=>""],
+              "Uruguay"=>["capital"=>"Montevideo",
+                          "Moneda"=>"",
+                          "poblacion"=>""]
+            ];
+
+    echo"<pre>";
+    var_dump($paises);
+    echo"</pre>";
+//recorrer simple
+foreach($paises as $pais => $informacion){
+    echo"<h1> $pais</h1>";
+    echo $informacion["capital"];
+    echo "<hr/>";
+
+
+
+
+
+}
+//recorrer con doble foreach
+foreach($paises as $pais => $informacion){
+    echo"<h1> $pais</h1>";
+    foreach ($informacion as $clave =>$valor){
+        echo $clave,"=",$valor;
+    echo "<hr/>";
+    }
+
+
+
+
+
+
+}
 
 
 });
