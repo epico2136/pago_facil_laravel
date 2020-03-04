@@ -113,11 +113,11 @@ foreach($paises as $pais => $informacion){
 foreach($paises as $pais => $informacion){
     echo"<h1> $pais</h1>";
     foreach ($informacion as $clave =>$valor){
-        echo $clave,"=",$valor;
-    echo "<hr/>";
+        echo "$clave : $valor";
+    
     }
 
-
+    echo "<hr/>";
 
 
 
