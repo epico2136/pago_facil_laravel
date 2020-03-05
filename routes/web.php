@@ -71,35 +71,43 @@ Route::get('arreglosm',function(){
 
     $paises =["Colombia"=>["capital"=>"Bogota",
                           "Moneda"=>"peso",
-                          "poblacion"=>50],
+                          "poblacion"=>"50 Millones de habitantes",
+                          "Ciudades Principales"=>["Cali","Medellin","Baranquilla"]],
               "Peru"=>["capital"=>"Lima",
                        "Moneda"=>"sol",
-                       "poblacion"=>32],
+                       "poblacion"=>"32 Millones de habitantes",
+                       "Ciudades Principales"=>["Lima","Arequipa","Trujillo"]],
               "Bolivia"=>["capital"=>"La paz",
                           "Moneda"=>"peso Boliviano",
-                          "poblacion"=>11],
+                          "poblacion"=>"11 Millones de habitantes",
+                          "Ciudades Principales"=>["Santa cruz","El alto","Cochabanba"]],
               "Argentina"=>["capital"=>"Buenos Aires",
-                            "Moneda"=>"",
-                            "poblacion"=>""],
+                            "Moneda"=>"Peso argentino",
+                            "poblacion"=>"44 Millones de habitantes",
+                            "Ciudades Principales"=>["Rosario","La Plata","Lanus"]],
               "Venezuela"=>["capital"=>"Caracas",
-                            "Moneda"=>"",
-                            "poblacion"=>""],
+                            "Moneda"=>"Bolivar",
+                            "poblacion"=>"31 Millones de habitantes",
+                            "Ciudades Principales"=>["Maracaibo","Rosario","Barquisimeto"]],
               "Brazil"=>["capital"=>"Sao Paulo",
-                        "Moneda"=>"",
-                        "poblacion"=>""],
+                        "Moneda"=>"Real brasileño",
+                        "poblacion"=>"209 Millones de habitantes",
+                        "Ciudades Principales"=>["Rio de janeiro","Fortaleza","Belo Horizonte"]],
               "Paraguay"=>["capital"=>"Asuncion",
-                           "Moneda"=>"",
-                           "poblacion"=>""],
+                           "Moneda"=>"Guaraní paraguayo",
+                           "poblacion"=>"6 Millones de habitantes",
+                           "Ciudades Principales"=>["Luque","San lorenzo","Encarnacion"]],
               "Uruguay"=>["capital"=>"Montevideo",
-                          "Moneda"=>"",
-                          "poblacion"=>""]
+                          "Moneda"=>"Peso uruguayo",
+                          "poblacion"=>"3 Millones de habitantes",
+                          "Ciudades Principales"=>["Maldondo","Rivera","Pysandu"]]
             ];
 
-    echo"<pre>";
-    var_dump($paises);
-    echo"</pre>";
+//    echo"<pre>";
+  //  var_dump($paises);
+  //  echo"</pre>";
 //recorrer simple
-foreach($paises as $pais => $informacion){
+/*foreach($paises as $pais => $informacion){
     echo"<h1> $pais</h1>";
     echo $informacion["capital"];
     echo "<hr/>";
@@ -119,10 +127,11 @@ foreach($paises as $pais => $informacion){
 
     echo "<hr/>";
 
+    
+}*/
 
-
-
-}
-
+//mostrar la vista
+return view('paises')
+            ->with('paises' , $paises);
 
 });
