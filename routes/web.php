@@ -1,5 +1,6 @@
 <?php
 
+use App\producto;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -135,3 +136,35 @@ return view('paises')
             ->with('paises' , $paises);
 
 });
+
+Route::get("pruebaprod",function(){
+
+    //insertar un producto
+    $p = new producto();
+    //crear atributos
+    $p->nombre="bicicleta";
+    $p->valor_unitario = 450.897;
+    //guardar en BD
+    $p->save();
+
+});
+
+Route::get("nuevoproducto",function(){
+//mostrar formulario de guardar producto
+return view('productos.crear');
+    
+
+});
+
+Route::post("guardarproducto",function(){
+    //recibir losa datos que vienen del formulario
+    $p = new producto();
+     //crear atributos
+    $p->nombre= $_POST["nombre"];
+    $p->valor_unitario = $_POST["valor"];
+    //guardar en BD
+    $p->save();
+    echo"producto registrado";
+    
+    });
+    
